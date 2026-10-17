@@ -1,0 +1,355 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.AskOmy {
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #ffffff;
+    color: #202123;
+    font-family: Inter, Arial, sans-serif;
+}
+
+/* Top header */
+
+.welcome {
+    height: 62px;
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    border-bottom: 1px solid #eceef2;
+    background: #ffffff;
+}
+
+.welcome h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 750;
+    letter-spacing: -0.6px;
+}
+
+.welcome h3 span {
+    color: #7564ee;
+}
+
+.welcome-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #777d8a;
+    font-size: 12px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+}
+
+/* Main layout */
+
+.Ai {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* Sidebar */
+
+.AskOmy .Askomy_system {
+    width: 265px;
+    min-width: 265px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 14px 14px;
+    background: #f7f7fa;
+    border-right: 1px solid #e9eaf0;
+    overflow-y: auto;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 4px 8px 24px;
+}
+
+.brand-icon {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    color: white;
+    font-size: 23px;
+    background: linear-gradient(135deg, #8b5cf6, #5267ed);
+    box-shadow: 0 4px 12px #7564ee35;
+}
+
+.sidebar-brand h2 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.sidebar-brand p {
+    margin: 0;
+    color: #888c98;
+    font-size: 11px;
+}
+
+/* Sidebar buttons */
+
+.sidebar-button {
+    width: 100%;
+    min-height: 43px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 0 12px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: #424552;
+    font-size: 13px;
+    font-weight: 550;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.sidebar-button:hover {
+    background: #eaeaf3;
+    border-color: #e1e1ed;
+}
+
+.new-chat-button {
+    background: #ffffff;
+    border-color: #e5e5ed;
+    color: #333344;
+    box-shadow: 0 2px 5px #1f293708;
+}
+
+.new-chat-button:hover {
+    background: #efedff;
+    border-color: #d7d0ff;
+}
+
+.button-icon {
+    width: 22px;
+    display: inline-grid;
+    place-items: center;
+    font-size: 19px;
+}
+
+/* Chat history */
+
+.history-heading {
+    padding: 27px 10px 12px;
+    color: #999ba7;
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 1.2px;
+}
+
+.AskOmy .title {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #e7e7ee;
+}
+
+.setting-button {
+    margin-top: 2px;
+}
+
+/* Chat area */
+
+.AskOmy .AskOmy_chat {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow: auto;
+    background: #ffffff;
+}
+
+/* Popup background */
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(19, 22, 35, 0.48);
+    backdrop-filter: blur(5px);
+    animation: overlayFade 0.18s ease-out;
+}
+
+/* Popup panel */
+
+.popup-panel {
+    width: 100%;
+    max-width: 510px;
+    max-height: min(82vh, 720px);
+    max-height: min(82dvh, 720px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #e8e8f0;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 24px 90px #00000025;
+    animation: popupEnter 0.22s ease-out;
+}
+
+.popup-header {
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 21px;
+    border-bottom: 1px solid #ededf2;
+}
+
+.popup-header h2 {
+    margin: 0;
+    color: #252638;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.popup-close {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border: none;
+    border-radius: 9px;
+    background: #f4f4f7;
+    color: #555766;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.popup-close:hover {
+    background: #e8e7f1;
+    color: #252638;
+}
+
+.popup-content {
+    padding: 22px;
+    overflow-y: auto;
+}
+
+/* Animations */
+
+@keyframes overlayFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popupEnter {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+    .welcome {
+        height: 55px;
+        min-height: 55px;
+        padding: 0 15px;
+    }
+
+    .welcome h3 {
+        font-size: 18px;
+    }
+
+    .welcome-status {
+        font-size: 10px;
+    }
+
+    .AskOmy .Askomy_system {
+        width: 205px;
+        min-width: 205px;
+        padding: 15px 9px;
+    }
+
+    .sidebar-brand {
+        gap: 8px;
+        padding: 4px 5px 20px;
+    }
+
+    .brand-icon {
+        width: 33px;
+        height: 33px;
+    }
+
+    .sidebar-brand h2 {
+        font-size: 13px;
+    }
+
+    .popup-panel {
+        max-width: 100%;
+        border-radius: 16px;
+    }
+
+    .popup-content {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 450px) {
+    .AskOmy .Askomy_system {
+        width: 150px;
+        min-width: 150px;
+        padding: 12px 7px;
+    }
+
+    .sidebar-brand {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sidebar-brand p {
+        display: none;
+    }
+
+    .sidebar-button {
+        gap: 5px;
+        padding: 0 7px;
+        font-size: 11px;
+    }
+
+    .history-heading {
+        padding: 20px 5px 10px;
+        font-size: 9px;
+    }
+
+    .welcome-status {
+        gap: 5px;
+    }
+}

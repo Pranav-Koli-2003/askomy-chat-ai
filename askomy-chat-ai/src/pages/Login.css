@@ -1,0 +1,180 @@
+
+/* Main page */
+#login,
+#create_account {
+    width: 100%;
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 35px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 22px;
+    box-shadow: 0 15px 45px rgba(82, 103, 237, 0.15);
+
+    animation: formEnter 0.6s ease both;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#login:hover,
+#create_account:hover {
+    box-shadow: 0 20px 55px rgba(82, 103, 237, 0.23);
+}
+
+/* Heading */
+#login h2,
+#create_account h2 {
+    margin: 0 0 8px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 750;
+    letter-spacing: -0.7px;
+
+    background: linear-gradient(135deg, #8b5cf6, #5267ed);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Inputs */
+#login input,
+#create_account input {
+    width: 100%;
+    padding: 14px 15px;
+    box-sizing: border-box;
+
+    border: 1px solid #e2e3ed;
+    border-radius: 12px;
+    outline: none;
+
+    background: #f8f9ff;
+    color: #25243a;
+    font-size: 15px;
+
+    transition: border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease,
+                transform 0.25s ease;
+}
+
+#login input:focus,
+#create_account input:focus {
+    background: #fff;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.13);
+    transform: translateY(-2px);
+}
+
+#login input::placeholder,
+#create_account input::placeholder {
+    color: #9698aa;
+}
+
+/* Status message */
+#login > p:first-of-type,
+#create_account > p:first-of-type {
+    margin: 0;
+    color: #5267ed;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+/* Account switch text */
+#login p,
+#create_account p {
+    color: #6c6c80;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+#login span,
+#create_account span {
+    margin-left: 5px;
+    color: #7655e9;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#login span:hover,
+#create_account span:hover {
+    color: #ed5b9b;
+    text-decoration: underline;
+}
+
+/* Submit button */
+#login button,
+#create_account button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #8b5cf6, #5267ed);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+
+    box-shadow: 0 7px 18px rgba(110, 91, 235, 0.25);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                filter 0.25s ease;
+}
+
+#login button:hover,
+#create_account button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 11px 25px rgba(110, 91, 235, 0.35);
+    filter: brightness(1.06);
+}
+
+#login button:active,
+#create_account button:active {
+    transform: scale(0.98);
+}
+
+/* Form entrance */
+@keyframes formEnter {
+    from {
+        opacity: 0;
+        transform: translateY(22px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+    #login,
+    #create_account {
+        max-width: calc(100% - 30px);
+        margin: 30px auto;
+        padding: 25px 20px;
+        border-radius: 18px;
+        gap: 15px;
+    }
+
+    #login h2,
+    #create_account h2 {
+        font-size: 25px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    #login,
+    #create_account,
+    #login *,
+    #create_account * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

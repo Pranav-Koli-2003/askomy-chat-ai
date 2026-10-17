@@ -1,0 +1,89 @@
+
+.system_info {
+    color: #252638;
+    font-family: Arial, sans-serif;
+}
+
+.system_info form {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    padding: 10px 2px;
+}
+
+.system_info h4 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Temperature slider */
+.system_info input[type="range"] {
+    display: block;
+    width: 100%;
+    margin: 12px 0 8px;
+    accent-color: #8b5cf6;
+    cursor: pointer;
+    transition: filter 0.3s;
+}
+
+.system_info input[type="range"]:hover {
+    filter: drop-shadow(0 0 5px #8b5cf6);
+}
+
+.system_info input[type="range"]::-webkit-slider-thumb {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.system_info input[type="range"]:active::-webkit-slider-thumb {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 7px #8b5cf633;
+}
+
+/* Instruction input */
+.system_info input[type="text"] {
+    display: block;
+    width: 100%;
+    min-height: 46px;
+    margin-top: 12px;
+    padding: 13px 14px;
+    border: 1px solid #e1e4f0;
+    border-radius: 11px;
+    outline: none;
+    background: #fafaff;
+    font-size: 14px;
+    transition: border 0.25s, box-shadow 0.25s;
+}
+
+.system_info [type="text"]:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px #8b5cf622;
+    background: #fff;
+}
+
+/* Update button */
+.system_info button {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 6px;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #8b5cf6, #5267ed);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px #5267ed25;
+    transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+
+.system_info button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px #5267ed40;
+    filter: brightness(1.06);
+}
+
+.system_info button:active {
+    transform: scale(0.98);
+}

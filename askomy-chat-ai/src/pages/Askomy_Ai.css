@@ -1,0 +1,695 @@
+* {
+    box-sizing: border-box;
+}
+
+.AskOmy {
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #ffffff;
+    color: #202123;
+    font-family: Inter, Arial, sans-serif;
+}
+
+/* Top header */
+
+.welcome {
+    height: 62px;
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    border-bottom: 1px solid #eceef2;
+    background: #ffffff;
+}
+
+.welcome h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 750;
+    letter-spacing: -0.6px;
+}
+
+.welcome h3 span {
+    color: #7564ee;
+}
+
+.welcome-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #777d8a;
+    font-size: 12px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+}
+
+/* Main layout */
+
+.Ai {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* Sidebar */
+
+.AskOmy .Askomy_system {
+    width: 265px;
+    min-width: 265px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 14px 14px;
+    background: #f7f7fa;
+    border-right: 1px solid #e9eaf0;
+    overflow-y: auto;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 4px 8px 24px;
+}
+
+.brand-icon {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    color: white;
+    font-size: 23px;
+    background: linear-gradient(135deg, #8b5cf6, #5267ed);
+    box-shadow: 0 4px 12px #7564ee35;
+}
+
+.sidebar-brand h2 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.sidebar-brand p {
+    margin: 0;
+    color: #888c98;
+    font-size: 11px;
+}
+
+/* Sidebar buttons */
+
+.sidebar-button {
+    width: 100%;
+    min-height: 43px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 0 12px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: #424552;
+    font-size: 13px;
+    font-weight: 550;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.sidebar-button:hover {
+    background: #eaeaf3;
+    border-color: #e1e1ed;
+}
+
+.new-chat-button {
+    background: #ffffff;
+    border-color: #e5e5ed;
+    color: #333344;
+    box-shadow: 0 2px 5px #1f293708;
+}
+
+.new-chat-button:hover {
+    background: #efedff;
+    border-color: #d7d0ff;
+}
+
+.button-icon {
+    width: 22px;
+    display: inline-grid;
+    place-items: center;
+    font-size: 19px;
+}
+
+/* Chat history */
+
+.history-heading {
+    padding: 27px 10px 12px;
+    color: #999ba7;
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 1.2px;
+}
+
+.AskOmy .title {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #e7e7ee;
+}
+
+.setting-button {
+    margin-top: 2px;
+}
+
+/* Chat area */
+
+.AskOmy .AskOmy_chat {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow: auto;
+    background: #ffffff;
+}
+
+/* Popup background */
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(19, 22, 35, 0.48);
+    backdrop-filter: blur(5px);
+    animation: overlayFade 0.18s ease-out;
+}
+
+/* Popup panel */
+
+.popup-panel {
+    width: 100%;
+    max-width: 510px;
+    max-height: min(82vh, 720px);
+    max-height: min(82dvh, 720px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #e8e8f0;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 24px 90px #00000025;
+    animation: popupEnter 0.22s ease-out;
+}
+
+.popup-header {
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 21px;
+    border-bottom: 1px solid #ededf2;
+}
+
+.popup-header h2 {
+    margin: 0;
+    color: #252638;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.popup-close {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border: none;
+    border-radius: 9px;
+    background: #f4f4f7;
+    color: #555766;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.popup-close:hover {
+    background: #e8e7f1;
+    color: #252638;
+}
+
+.popup-content {
+    padding: 22px;
+    overflow-y: auto;
+}
+
+/* Animations */
+
+@keyframes overlayFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popupEnter {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =====================================================================
+   RESPONSIVE  (only media queries below - nothing above this line changed)
+   >=1600 large desktop | 769-1024 tablet | <=768 mobile | <=480 small phone
+   ===================================================================== */
+
+/* ---------- 2. LARGE DESKTOP  (>= 1600px) ---------- */
+
+@media (min-width: 1600px) {
+    .AskOmy .Ai .Askomy_system {
+        width: 300px;
+        min-width: 300px;
+    }
+
+    .AskOmy .welcome {
+        padding: 0 32px;
+    }
+}
+
+
+/* ---------- 3. TABLET  (769px - 1024px) ---------- */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .AskOmy .Ai .Askomy_system {
+        width: 240px;
+        min-width: 240px;
+        padding: 18px 12px 12px;
+    }
+
+    .AskOmy .ai-messages {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+}
+
+
+/* ---------- 4. MOBILE  (<= 768px) ----------
+   Sidebar -> top bar:
+   [  + New chat  ........................  [⚙] ]
+   [ chat 1 ] [ chat 2 ] [ chat 3 ] ->  (swipe)
+   ------------------------------------------------ */
+
+@media (max-width: 768px) {
+
+
+    /* chat area fills remaining height (fixes Ai_chat min-height:520px) */
+    .AskOmy .AskOmy_chat {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .AskOmy .AskOmy_chat .ai-chat {
+        flex: 1 1 auto;
+        height: auto;
+        min-height: 0;
+    }
+
+    /* page becomes a vertical stack: top bar, then chat */
+    .AskOmy .Ai {
+        flex-direction: column;
+    }
+
+    /* header */
+    .AskOmy .welcome {
+        height: 52px;
+        min-height: 52px;
+        padding: 0 14px;
+        padding-top: env(safe-area-inset-top, 0px);
+    }
+
+    .AskOmy .welcome h3 {
+        font-size: 18px;
+    }
+
+    .AskOmy .welcome-status {
+        font-size: 11px;
+    }
+
+    /* sidebar -> compact top bar */
+    .AskOmy .Ai .Askomy_system {
+        width: 100%;
+        min-width: 0;
+        flex: 0 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+            "new  settings"
+            "list list";
+        align-items: center;
+        gap: 8px;
+        padding: 10px 12px 8px;
+        border-right: none;
+        border-bottom: 1px solid #e9eaf0;
+        overflow: visible;
+    }
+
+    /* brand is already shown in the page header, so hide the duplicate */
+    .AskOmy .Ai .sidebar-brand {
+        display: none;
+    }
+
+    .AskOmy .Ai .new-chat-button {
+        grid-area: new;
+        width: 100%;
+        justify-content: center;
+        min-height: 44px;
+        font-size: 14px;
+        border-radius: 12px;
+        color: #fff;
+        border-color: transparent;
+        background: linear-gradient(135deg, #8b5cf6, #5267ed);
+        box-shadow: 0 4px 14px #5267ed38;
+    }
+
+    .AskOmy .Ai .new-chat-button:hover {
+        background: linear-gradient(135deg, #8b5cf6, #5267ed);
+        border-color: transparent;
+        filter: brightness(1.06);
+    }
+
+    .AskOmy .Ai .sidebar-bottom {
+        grid-area: settings;
+        margin: 0;
+        padding: 0;
+        border-top: none;
+    }
+
+    .AskOmy .Ai .setting-button {
+        width: auto;
+        min-height: 44px;
+        margin: 0;
+        border-radius: 12px;
+        border-color: #e5e5ed;
+        background: #fff;
+    }
+
+    .AskOmy .Ai .history-heading {
+        display: none;
+    }
+
+    /* chat list -> horizontal swipe chips */
+    .AskOmy .Ai .title {
+        grid-area: list;
+        flex: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .AskOmy .Ai .title::-webkit-scrollbar {
+        display: none;
+    }
+
+    .AskOmy .Ai .chat-list {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        width: max-content;
+        min-width: 100%;
+        padding: 2px 0 4px;
+    }
+
+    .AskOmy .Ai .chat-item {
+        flex: 0 0 auto;
+        max-width: 220px;
+        border-radius: 999px;
+    }
+
+    .AskOmy .Ai .chat-item:not(.selected) {
+        background: #fff;
+        border-color: #e5e5ed;
+    }
+
+    .AskOmy .Ai .chat-item:hover,
+    .AskOmy .Ai .chat-item.selected {
+        transform: none;
+    }
+
+    .AskOmy .Ai .chat-title {
+        padding: 10px 6px 10px 16px;
+        border-radius: 999px;
+        font-size: 13px;
+    }
+
+    .AskOmy .Ai .delete-btn {
+        margin-right: 4px;
+        padding: 6px 8px;
+        opacity: 1;
+    }
+
+    .AskOmy .Ai .chat-error {
+        white-space: nowrap;
+    }
+
+    /* chat area */
+    .AskOmy .ai-messages {
+        padding: 18px 12px;
+    }
+
+    .AskOmy .ai-welcome {
+        min-height: 220px;
+        padding: 16px;
+    }
+
+    .AskOmy .welcome-logo {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 14px;
+        border-radius: 19px;
+        font-size: 30px;
+    }
+
+    .AskOmy .message-row {
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .AskOmy .message-content {
+        max-width: 90%;
+    }
+
+    .AskOmy .message-text {
+        padding: 11px 14px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .AskOmy .ai-input-area {
+        padding: 10px 10px calc(8px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .AskOmy .ai-input-box {
+        gap: 8px;
+        padding: 8px 8px 8px 14px;
+        border-radius: 18px;
+    }
+
+    /* 16px stops iPhone Safari from zooming when you tap the input */
+    .AskOmy .ai-input-box textarea,
+    .AskOmy .system_info input[type="text"] {
+        font-size: 16px;
+    }
+
+    .AskOmy .ai-send-button {
+        width: 44px;
+        height: 44px;
+    }
+
+    .AskOmy .ai-disclaimer {
+        margin-top: 6px;
+        font-size: 10px;
+    }
+
+    /* popup -> bottom sheet */
+    .AskOmy .popup-overlay {
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .AskOmy .popup-panel {
+        max-width: 100%;
+        max-height: 92vh;
+        max-height: 92dvh;
+        border-radius: 22px 22px 0 0;
+        border-bottom: none;
+        animation: askomySheetUp 0.26s ease-out;
+    }
+
+    .AskOmy .popup-header {
+        min-height: 58px;
+        padding: 0 16px;
+    }
+
+    .AskOmy .popup-close {
+        width: 40px;
+        height: 40px;
+    }
+
+    .AskOmy .popup-content {
+        padding: 16px 16px calc(20px + env(safe-area-inset-bottom, 0px));
+    }
+}
+
+
+/* ---------- 5. SMALL PHONES  (<= 480px) ---------- */
+
+@media (max-width: 480px) {
+
+    /* header: keep only the green dot, hide the text */
+    .AskOmy .welcome-status {
+        font-size: 0;
+        gap: 0;
+    }
+
+    .AskOmy .status-dot {
+        width: 9px;
+        height: 9px;
+    }
+
+    .AskOmy .Ai .Askomy_system {
+        padding: 8px 10px 6px;
+    }
+
+    /* settings button: icon only */
+    .AskOmy .Ai .setting-button {
+        min-width: 44px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .AskOmy .Ai .setting-button > span:not(.button-icon) {
+        display: none;
+    }
+
+    .AskOmy .Ai .chat-item {
+        max-width: 180px;
+    }
+
+    .AskOmy .ai-messages {
+        padding: 14px 10px;
+    }
+
+    .AskOmy .message-avatar {
+        width: 28px;
+        height: 28px;
+        border-radius: 9px;
+        font-size: 16px;
+    }
+
+    .AskOmy .message-content {
+        max-width: 92%;
+    }
+
+    .AskOmy .ai-welcome h1 {
+        font-size: 21px;
+    }
+
+    .AskOmy .ai-welcome p {
+        font-size: 13px;
+    }
+}
+
+
+/* ---------- 6. VERY SMALL PHONES  (<= 360px) ---------- */
+
+@media (max-width: 360px) {
+    .AskOmy .welcome h3 {
+        font-size: 16px;
+    }
+
+    .AskOmy .message-text {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .AskOmy .Ai .chat-item {
+        max-width: 150px;
+    }
+}
+
+
+/* ---------- 7. SHORT LANDSCAPE PHONES (keyboard open / rotated) ---------- */
+
+@media (max-height: 520px) and (orientation: landscape) {
+    .AskOmy .welcome {
+        height: 42px;
+        min-height: 42px;
+    }
+
+    .AskOmy .ai-disclaimer {
+        display: none;
+    }
+
+    .AskOmy .ai-welcome {
+        min-height: 0;
+        padding: 8px;
+    }
+
+    .AskOmy .welcome-logo {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 8px;
+        font-size: 22px;
+    }
+
+    .AskOmy .ai-welcome h1 {
+        margin-bottom: 4px;
+        font-size: 18px;
+    }
+
+    .AskOmy .popup-panel {
+        max-height: 96vh;
+        max-height: 96dvh;
+    }
+}
+
+
+/* ---------- 8. EXTRAS ---------- */
+
+@keyframes askomySheetUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .AskOmy .popup-panel,
+    .AskOmy .popup-overlay,
+    .AskOmy .message-row,
+    .AskOmy .ai-welcome {
+        animation: none;
+    }
+}

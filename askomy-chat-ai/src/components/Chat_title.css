@@ -1,0 +1,107 @@
+
+.chat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 10px;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition: background .25s, transform .25s, border-color .25s;
+  animation: slideIn .35s ease both;
+}
+
+.chat-item:hover {
+  background: #f2edff;
+  transform: translateX(4px);
+}
+
+.chat-item.selected {
+  background: linear-gradient(110deg, #7c3aed, #5267ed);
+  border-color: #7048e8;
+  box-shadow: 0 5px 15px #7048e83d;
+  transform: translateX(3px);
+}
+
+.chat-title {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 12px;
+  overflow: hidden;
+  border: none;
+  border-radius: 11px;
+  background: transparent;
+  color: #39334b;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.chat-item.selected .chat-title {
+  color: white;
+  font-weight: 600;
+}
+
+.delete-btn {
+  margin-right: 5px;
+  padding: 7px 9px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #9991ad;
+  opacity: 0;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.chat-item:hover .delete-btn,
+.chat-item:focus-within .delete-btn {
+  opacity: 1;
+}
+
+.chat-item.selected .delete-btn {
+  color: white;
+  opacity: 1;
+}
+
+.delete-btn:hover {
+  background: #ffe4e6;
+  color: #e11d48 !important;
+}
+
+.chat-error {
+  padding: 8px;
+  color: #dc2626;
+  font-size: 12px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .delete-btn {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-item {
+    animation: none;
+    transition: none;
+  }
+}
